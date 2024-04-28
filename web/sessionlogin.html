@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Session</title>
+    <style>
+        body {
+            margin: 20px;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+
+        input[type="submit"] {
+            background-color: #90EE90;
+            padding: 10px 20px; /* Adjust padding as needed */
+            margin-top: 10px; /* Add margin to separate it from the text input */
+            border: none; /* Remove default border */
+            border-radius: 5px; /* Add some border radius for visual appeal */
+            cursor: pointer; /* Change cursor on hover */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="session-container">
+        <h2>Session</h2>
+        <form action="LoginServlet" method="post">
+            UserName:
+            <input type="text" id="username" name="username" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

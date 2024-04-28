@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie</title>
+</head>
+<body>
+    <h2>Cookie</h2>
+    <form action="CookieServlet" method="post">
+        Cookie Name: <input type="text" id="cookiename" name="cookiename" required><br><br>
+        Cookie Value: <input type="text" id="cookievalue" name="cookievalue" required><br><br>
+        <input type="submit" value="Add a Cookie">
+    </form>
+    
+    <br>
+    
+    <button onclick="clearAllCookies()">Delete All Cookies</button>
+    
+    <script>
+        function clearAllCookies() {
+            var cookies = document.cookie.split(";");
+
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                var eqPos = cookie.indexOf("=");
+                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+            }
+        }
+    </script>
+</body>
+</html>
